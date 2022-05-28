@@ -12,53 +12,71 @@ public partial class members : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
-    protected void ShowMemberSQL()
+
+    string mySqlString, myCondition;
+    protected void ShowData()
     {
-        SqlConnection cn = new SqlConnection();
-        cn.ConnectionString = WebConfigurationManager.ConnectionStrings["ConnDB"].ConnectionString;
-
-        string mySqlString, myCondition;
-        mySqlString = "SELECT TOP 50 ";
-        mySqlString += " * "; // 全部的欄位
-        mySqlString += " FROM " + "tbStudent ";
-        myCondition = " [學號] Like '%" + qryStr.Text.Trim() + "%'";
-        myCondition += " OR [姓名] Like '%" + qryStr.Text.Trim() + "%'";
-        myCondition += " OR [Email2] Like '%" + qryStr.Text.Trim() + "%'";
-        mySqlString += " Where " + myCondition; // 取出全部符合myCondition條件的資料
-        Response.Write(mySqlString);
-        cn.Open();
-        SqlCommand cmd = new SqlCommand(mySqlString, cn);
-        cmd.CommandText = mySqlString;
-
-        // Call ExecuteReader to return a DataReader  
-        SqlDataReader dr = cmd.ExecuteReader();
-
-        //lbStudents.Text = "<BR />mID   mName   Email  mRemark";
-        lbStudents.Text = "<table>  <tr>";
-        lbStudents.Text += "<th> 學號</th>";
-        lbStudents.Text += "<th> 姓名 </th>";
-        lbStudents.Text += "<th> Email </th>";
-        lbStudents.Text += "<th> Email2 </th > </tr>";
-        while (dr.Read())
+        try
         {
-            lbStudents.Text += "<tr><td>" + dr["學號"] + "</td>";
-            lbStudents.Text += "<td>" + dr["姓名"] + "</td>";
-            lbStudents.Text += "<td>" + dr["Email"] + "</td>";
-            lbStudents.Text += "<td>" + dr["Email2"] + "</td> </tr>";
-        }
-        lbStudents.Text += "</table>";
+            SqlConnection cn = new SqlConnection();
+            cn.ConnectionString = WebConfigurationManager.ConnectionStrings["ConnDB"].ConnectionString;
 
-        //Release resources  
-        dr.Close();
-        cn.Close();
+            mySqlString = "SELECT TOP 100 ";
+            mySqlString += " * "; 
+            mySqlString += " FROM " + "tbStudent ";
+            myCondition = " [學號] Like '%" + qryStr.Text.Trim() + "%'";
+            myCondition += " OR [姓名] Like '%" + qryStr.Text.Trim() + "%'";
+            myCondition += " OR [Email2] Like '%" + qryStr.Text.Trim() + "%'";
+            mySqlString += " Where " + myCondition;
+            Response.Write(mySqlString);
+
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(mySqlString, cn);
+            cmd.CommandText = mySqlString;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            lbStudents.Text = "<table>  <tr>";
+            lbStudents.Text += "<th> 學號</th>";
+            lbStudents.Text += "<th> 姓名 </th>";
+            lbStudents.Text += "<th> 系級</th>";
+            lbStudents.Text += "<th> Email </th>";
+            lbStudents.Text += "<th> Email2 </th > ";
+            lbStudents.Text += "<th> 修改 </th>";
+            lbStudents.Text += "<th> 刪除 </th></tr>";
+            string strStuDel = "";
+            string strStuEdit = "修改Link";
+
+            while (dr.Read())
+            {
+                lbStudents.Text += "<tr><td>" + dr["學號"] + "</td>";
+                lbStudents.Text += "<td>" + dr["姓名"] + "</td>";
+                lbStudents.Text += "<td>" + dr["系級"] + "</td>";
+                lbStudents.Text += "<td>" + dr["Email"] + "</td>";
+                lbStudents.Text += "<td>" + dr["Email2"] + "</td>";
+                strStuEdit = "<a href='stuEdit.aspx'>修改Link</a>";
+                lbStudents.Text += "<td>" + strStuEdit + "</td>";
+                strStuDel = "<a href=stuDel.aspx?key=" + dr["學號"] + ">刪除Link</a>";
+                lbStudents.Text += "<td>" + strStuDel + "</td> </ tr > ";
+            }
+            lbStudents.Text += "</table>";
+
+            dr.Close();
+            cn.Close();
+        }
+        catch(Exception ex)
+        {
+            Response.Write(ex.Message + "<br />" + mySqlString);
+        }
+        
 
     }
 
     protected void btnQry_Click(object sender, EventArgs e)
     {
-        ShowMemberSQL();
+        ShowData();
     }
 
     protected void btnADD_Click(object sender, EventArgs e)
