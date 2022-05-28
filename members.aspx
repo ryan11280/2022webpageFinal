@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1>
-    <asp:Label ID="progName1" runat="server" Text="維護學生會員資料"></asp:Label>
+    <asp:Label ID="progName1" runat="server" Text="會員資料管理專區"></asp:Label>
    </h1>
     <asp:Button ID="btnADD" runat="server" Text="新增資料" OnClick="btnADD_Click" />
     <br />
