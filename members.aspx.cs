@@ -38,7 +38,7 @@ public partial class members : System.Web.UI.Page
 
             SqlDataReader dr = cmd.ExecuteReader();
 
-            lbStudents.Text = "<table>  <tr>";
+            lbStudents.Text = "<table class='table table-hover table - mc - light - blue'>  <tr>";
             lbStudents.Text += "<th> 學號</th>";
             lbStudents.Text += "<th> 姓名 </th>";
             lbStudents.Text += "<th> 系級</th>";

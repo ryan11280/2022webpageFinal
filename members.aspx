@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tweda1.master" AutoEventWireup="true" CodeFile="members.aspx.cs" Inherits="members" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+        <!-- 外加Materail Design CSS -->
+    <link href="css/material.css" rel="stylesheet">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1>
     <asp:Label ID="progName1" runat="server" Text="會員資料管理專區"></asp:Label>
