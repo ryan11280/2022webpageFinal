@@ -77,8 +77,6 @@ public partial class stuDel :  System.Web.UI.Page
             cmd.CommandText = mySqlString;
             cmd.ExecuteNonQuery();
             cn.Close();
-
-            Response.Redirect("members.aspx");
         }
         catch (Exception ex)
         {
@@ -88,7 +86,16 @@ public partial class stuDel :  System.Web.UI.Page
 
     protected void btStuDel_Click(object sender, EventArgs e)
     {
-        DelData();
+        try
+        {
+            DelData();
+            Response.Write(@"<script language='javascript'>alert('刪除完成!!')</script>");
+            Response.Redirect("members.aspx");
+        }
+        catch (Exception ex)
+        {
+            Response.Write(ex.Message);
+        }
     }
 
     protected void BackToMembers(object sender, EventArgs e)

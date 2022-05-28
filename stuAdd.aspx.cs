@@ -31,9 +31,14 @@ public partial class stuAdd :  System.Web.UI.Page
             cmd.CommandText = mySqlString;
             cmd.ExecuteNonQuery();
             cn.Close();
-            Response.Redirect("students.aspx");
+            Response.Redirect("members.aspx");
         }
         catch (Exception ex)
         { Response.Write(ex.Message + "<br />" + mySqlString); }
+    }
+
+    protected void btnBack_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("members.aspx");
     }
 }

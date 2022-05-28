@@ -47,7 +47,7 @@ public partial class members : System.Web.UI.Page
             lbStudents.Text += "<th> 修改 </th>";
             lbStudents.Text += "<th> 刪除 </th></tr>";
             string strStuDel = "";
-            string strStuEdit = "修改Link";
+            string strStuUpdate = "修改Link";
 
             while (dr.Read())
             {
@@ -56,9 +56,9 @@ public partial class members : System.Web.UI.Page
                 lbStudents.Text += "<td>" + dr["系級"] + "</td>";
                 lbStudents.Text += "<td>" + dr["Email"] + "</td>";
                 lbStudents.Text += "<td>" + dr["Email2"] + "</td>";
-                strStuEdit = "<a href='stuEdit.aspx'>修改Link</a>";
-                lbStudents.Text += "<td>" + strStuEdit + "</td>";
-                strStuDel = "<a href=stuDel.aspx?key=" + dr["學號"] + ">刪除Link</a>";
+                strStuUpdate = "<a href='stuUpdate.aspx'>修改</a>";
+                lbStudents.Text += "<td>" + strStuUpdate + "</td>";
+                strStuDel = "<a href=stuDel.aspx?key=" + dr["學號"] + ">刪除</a>";
                 lbStudents.Text += "<td>" + strStuDel + "</td> </ tr > ";
             }
             lbStudents.Text += "</table>";

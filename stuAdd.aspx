@@ -30,6 +30,7 @@
     <tr><td></td>
     <td>
     <asp:Button ID="btnOK" runat="server" Text="確定新增" OnClick="btnOK_Click" />
+    <asp:Button ID="btnBack" runat="server" Text="返回" OnClick="btnBack_Click" />
     </td></tr>
     </table>
 

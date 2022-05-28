@@ -20,7 +20,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">總機</h5>
-                            <p class="mb-0">台北市大安區信義路三段100號</p>
+                            <p class="mb-0">台北市大安區信義路二段100號</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
@@ -29,7 +29,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">電話</h5>
-                            <p class="mb-0">0212224567</p>
+                            <p class="mb-0">02-12345678</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
