@@ -63,6 +63,6 @@ public partial class members : System.Web.UI.Page
 
     protected void btnADD_Click(object sender, EventArgs e)
     {
-        Response.Redirect("studADD.aspx");
+        Response.Redirect("stuADD.aspx");
     }
 }

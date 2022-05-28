@@ -29,6 +29,6 @@ public partial class stuAdd :  System.Web.UI.Page
         cmd.CommandText = mySqlString;
         cmd.ExecuteNonQuery();
         cn.Close();
-        Response.Redirect("students.aspx");
+        Response.Redirect("members.aspx");
     }
 }
