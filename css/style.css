@@ -1,3 +1,6 @@
+/********** ¦Û­q**********/
+
+
 /********** Template CSS **********/
 :root {
     --primary: #06BBCC;
@@ -14,19 +17,7 @@
 }
 
 .back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
-}
-
-
-/*** Spinner ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    position: fs;
     z-index: 99999;
 }
 

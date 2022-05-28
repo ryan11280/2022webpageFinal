@@ -31,7 +31,24 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        table{
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th{
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        tr{
+            background-color: #8c93ab;
+        }
+        tr:nth-child(even){
+            background-color: #a0aabb;
+        }
 
+    </style>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
