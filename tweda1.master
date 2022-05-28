@@ -35,23 +35,7 @@
     <link href="css/material.css" rel="stylesheet">
 
      <!-- 直接外加CSS -->
-    <style>
-        table{
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th{
-            border: 1px solid #dddddd;
-            padding: 8px;
-            margin:3px;
-        }
-        tr{
-            background-color: #8c93ab;
-        }
-        tr:nth-child(even){
-            background-color: #a0aabb;
-        }
+        <style>
         h1 { color: #7c795d; 
                 font-family: 'Trocchi', serif;
                 font-size: 30px;
@@ -63,6 +47,7 @@
               
         }
     </style>
+    <!-- Materail Design JS Table動畫 -->
     <script>
 
         /**

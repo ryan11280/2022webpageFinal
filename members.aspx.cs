@@ -38,14 +38,14 @@ public partial class members : System.Web.UI.Page
 
             SqlDataReader dr = cmd.ExecuteReader();
 
-            lbStudents.Text = "<table class='table table-hover table - mc - light - blue'>  <tr>";
+            lbStudents.Text = "<div class='table - responsive - vertical shadow - z - 1'><table class='table table-hover table - mc - light - blue'>  <tr>";
             lbStudents.Text += "<th> 學號</th>";
             lbStudents.Text += "<th> 姓名 </th>";
             lbStudents.Text += "<th> 系級</th>";
             lbStudents.Text += "<th> Email </th>";
             lbStudents.Text += "<th> Email2 </th > ";
             lbStudents.Text += "<th> 修改 </th>";
-            lbStudents.Text += "<th> 刪除 </th></tr>";
+            lbStudents.Text += "<th> 刪除 </th></tr></div>";
             string strStuDel = "";
             string strStuUpdate = "修改Link";
 
